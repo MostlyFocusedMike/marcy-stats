@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="assets/index.26900a6a.js"></script>
+    <link rel="stylesheet" href="assets/index.c4668504.css">
+  </head>
+  <body>
+
+    <h1>Code Challenge Stats</h1>
+
+    <div id="total-hits" class="section">
+      <h2>Total Page Hits</h2>
+      <p>Here are the total views per page.</p>
+      <div  class="standard-chart">
+        <canvas id="chart-1"></canvas>
+      </div>
+      <p class="center-text med-text">
+        The entire site has gotten a total of <em id="site-total" class="important-text"></em> hits.
+      </p>
+      <p class="center-text med-text">
+        With <em id="ip-total" class="important-text"></em> unique IPs.
+      </p>
+
+      <h2>Site Hits Per Day</h2>
+      <p>As you can see, there were barely any hits during Thanksgiving, and then the final week before the deadline exploded. Each day of the week is color coded to match. In order to maximize students active attention, perhaps we should avoid releasing before Thanksgiving for the spring cohort.</p>
+      <div  class="standard-chart">
+        <canvas id="site-hits-per-day"></canvas>
+      </div>
+
+      <h2>Page Hits By Route Per Day</h2>
+      <p>Here are the page totals broken down by day, use the toggle below to change the date.</p>
+      <div id="routes-per-day-chart-div" class="standard-chart">
+        <canvas id="routes-per-day-chart"></canvas>
+      </div>
+      <div id="date-slider-div">
+        <label for="date-slider">Select a date</label>
+        <input type="range" min=0 value=0 id="date-slider"/>
+      </div>
+
+      <h2>Hits By Hour</h2>
+      <div id="traffic-times-div" style="width: 90%; margin: 5rem auto;">
+        <canvas id="traffic-times"></canvas>
+      </div>
+    </div>
+
+    <div id="total-hits" class="section">
+
+      <h2>"Confirmed" Students data</h2>
+      <p>
+        There are <span id="confirmed-students"></span> ip addresses who visited the site at least <span id="page-count-floor"></span> times. We can assume those are real people who are interested in the site. They may be the same student on multiple devices (we had well over 100 hits from mobile devices), though some could be Marcy Staff looking at the site as well.
+      </p>
+      <p>
+        Here's the percentage of those users who loaded a given page at least once
+      </p>
+      <div style="width: 75%; margin: 5rem auto;">
+        <canvas id="confirmed-percentage-chart"></canvas>
+      </div>
+
+      <div id="journeys-div" style="display: none;">
+        <canvas id="journeys"></canvas>
+      </div>
+
+      <h2>Student Journeys</h2>
+      <div id="journey-slider-div">
+        <label for="journey-slider">Select a Student</label>
+        <input type="range" min=0 value=0 id="journey-slider"/>
+      </div>
+      <p id="current-student-ip"></p>
+      <div id="journey-tables"></div>
+    </div>
+
+    <h2>Device Use</h2>
+    <div style="width: 40%; margin: 5rem auto;">
+      <canvas id="devices-chart"></canvas>
+    </div>
+
+
+    <h2>Site Notes</h2>
+    <ul style="max-width: 40rem; width: 50%; margin: 1rem auto 2rem;">
+      <li>
+        There is no "wall" where students hit a lesson, and then give up. The slope pattern is exactly what we were hoping for.
+      </li>
+      <li>
+        Students tend to hit the trial questions first to "check out" what they need to know. Perhaps in the future each lesson will show the exact problem so they can keep in mind what they're trying to solve. Like, who wouldn't look at the test first if given the option? (actual logins could help A/B test something like this)
+      </li>
+      <li>
+        Devices make sense, though the high number of macs (and iPads?) is nice. This could make system setup easier if fewer students need to borrow macs in the future. Also, I wish I could see who added this to discord.
+      </li>
+      <li>
+        While student are learning, they do not at all have a linear path, they will go all over the place, referencing pretty much every lesson all the time. I think a mini viewport with references to previous sessions would be a really cool idea to keep students focused on the current lesson, and use up more screen (it's a little bare by default)
+      </li>
+      <li>
+        there are some theoretical patterns, like a student who day 1 looked at the intro, day 2 lesson 1, and then nothing until a week later when they hit the application question page. Did they realize they needed to know a lot, but didn't like the resource we made, found something else to learn JS, and then come back and take the exam?
+      </li>
+      <li>
+        I wish I could tie students to the actual submission date and entry to see how patterns applied to actual end results. Next round, we should have a sign-in so we can actually tie submissions to journeys.
+      </li>
+    </ul>
+
+    <a href="./index.html">Check out the stats for the applications</a>
+
+  </body>
+</html>
